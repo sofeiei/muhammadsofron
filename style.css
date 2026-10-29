@@ -196,7 +196,7 @@ body {
 
 /* ไฮไลต์สีฟ้าสำหรับเมนูหน้าที่เปิดอยู่ (.skills()) */
 .nav-link.active-page {
-    color: #60a5fa;
+    color: #60a0fa;
 }
 
 .nav-btn-outline {
@@ -346,19 +346,19 @@ body {
 /* ========================================== */
 .profile-card {
     width: 100%;
-    max-width: 200px;      /* ขนาดตรงกลางตามแบบในคลิป */
+    max-width: 150px;      /* ขนาดตรงกลางตามแบบในคลิป */
     aspect-ratio: 3 / 4;   /* สัดส่วนแนวตั้ง */
-    border-radius: 1.25rem;
+    border-radius: 1rem;
     background-color: #111827;
     overflow: hidden;
     flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(28, 226, 233, 0.5);
 }
 
 @media (min-width: 768px) {
     .profile-card {
-        max-width: 280px;
+        max-width: 200px;
         height: auto;
     }
 }
@@ -397,9 +397,6 @@ body {
 @media (min-width: 768px) {
     .stat-box {
         padding: 1.5rem;
-        background-color: rgba(3, 7, 18, 0.6);
-        border-radius: 0.75rem;
-        border: 1px solid #111827;
         text-align: center;
     }
 }
@@ -408,6 +405,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -420,6 +418,7 @@ body {
     font-size: 0.75rem;
     color: #94a3b8;
     margin-top: 0.25rem;
+    text-align: center;
 }
 
 /* ========================================== */
