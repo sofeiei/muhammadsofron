@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammadsofron</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- // ส่วนไล่สีพื้นหลัง (Background Gradient) -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Sticky Navigation Bar โทนเข้ม -->
+    <nav class="navbar-sticky">
+        <div class="navbar-content">
+            <a href="index.html" class="code-font logo-text">
+                <span class="logo-bracket">&lt;</span>Sofron <span class="logo-bracket"> /&gt;</span>
+            </a>
+
+            <!-- ปุ่ม 3 ขีด สำหรับมือถือ (Hamburger Menu) -->
+            <button id="mobile-menu-btn" class="hamburger-btn">
+                <!-- ไอคอน 3 ขีด (SVG) -->
+                <svg id="icon-burger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <!-- ไอคอนกากบาท X (ซ่อนไว้ก่อน) -->
+                <svg id="icon-close" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- เมนูด้านขวา -->
+            <div id="nav-links" class="nav-links code-font">
+                <a href="./work/index.html" class="nav-link">.work()</a>
+                <a href="./skills/index.html" class="nav-link">.skills()</a>
+                <a href="./about/index.html" class="nav-link">.about()</a>
+                <a href="https://github.com/sofeiei" target="_blank" class="nav-btn-outline">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- ย้ายรูปโปรไฟล์ขึ้นมาด้านบนสุด -->
+            <div class="profile-card">
+                <img src="img/profile.png" alt="Profile Image" class="profile-image">
+            </div>
+
+            <!-- ข้อความแนะนำตัว -->
+            <div class="hero-text-box">
+                <p class="code-font text-hello">
+                    // Hello, World 👋
+                </p>
+                <h1 class="hero-title">
+                    Sofron<span class="text-primary">.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Frontend Developer &nbsp;·&nbsp; Narathiwad, Thailand 🇹🇭
+                </p>
+                <p class="hero-desc">
+                    สร้างแอปจริงครบวงจร — ตั้งแต่ออกแบบ database ถึง production deployment.
+                </p>
+                <div class="hero-buttons">
+                    <a href="work/index.html" class="btn-primary">
+                        Work <span class="text-primary">→</span>
+                    </a>
+                    <a href="skills/index.html" class="btn-secondary">
+                        Skills <span class="text-primary">→</span>
+                    </a>
+                    <a href="mailto:forget.zoph90@gmail.com" class="btn-secondary">
+                        Contact <span class="text-primary">↘︎</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-grid">
+            <div class="stat-box">
+                <p class="stat-number code-font">3+</p>
+                <p class="stat-label">Production Projects</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-number code-font">6+</p>
+                <p class="stat-label">Languages / Frameworks</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-number code-font">2026</p>
+                <p class="stat-label">Currently Shipping</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-number code-font">20</p>
+                <p class="stat-label">Years Old</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <p class="code-font text-section-tag">// What I build</p>
+
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3 class="skill-title">Full-Stack Web Apps</h3>
+                    <p class="skill-desc">Next.js · React · TypeScript · Node.js/Express</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🔒</div>
+                    <h3 class="skill-title">Auth & Security</h3>
+                    <p class="skill-desc">JWT · HTTP-only cookies · Zod v4 · Middleware</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3 class="skill-title">Multi-Database</h3>
+                    <p class="skill-desc">MySQL · SQLite · MongoDB · Redis · Google Sheets</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <span>forget.zoph90@gmail.com &nbsp;·&nbsp; +66 92 650 5729</span>
+        <span>© 2026 Zoph. All rights reserved.</span>
+    </footer>
+
+    <!-- Script สำหรับเปิด/ปิดเมนูบนมือถือ -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const iconBurger = document.getElementById('icon-burger');
+        const iconClose = document.getElementById('icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            // สลับ Class active เพื่อแสดง/ซ่อนเมนู
+            navLinks.classList.toggle('active');
+
+            // สลับไอคอนระหว่าง 3 ขีด และ กากบาท
+            if (navLinks.classList.contains('active')) {
+                iconBurger.style.display = 'none';
+                iconClose.style.display = 'block';
+            } else {
+                iconBurger.style.display = 'block';
+                iconClose.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

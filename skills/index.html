@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Skills - Sofron</title>
+    <!-- ดึงไฟล์ style.css ในโฟลเดอร์ตัวเอง -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar-sticky">
+        <div class="navbar-content">
+            <a href="../index.html" class="code-font logo-text">
+                <span class="logo-bracket">&lt;</span>Sofron <span class="logo-bracket"> /&gt;</span>
+            </a>
+
+            <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Toggle menu">
+                <svg id="icon-burger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg id="icon-close" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="nav-links code-font">
+                <a href="../work/index.html" class="nav-link">.work()</a>
+                <a href="./index.html" class="nav-link active-page">.skills()</a>
+                <a href="../about/index.html" class="nav-link">.about()</a>
+                <a href="https://github.com/sofeiei" target="_blank" class="nav-btn-outline">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <header class="page-header">
+            <p class="code-font text-tag">// app/skills/page.tsx</p>
+            <h1 class="page-title">Technical <span class="text-primary">Skills</span></h1>
+            <p class="page-desc">Frontend architecture, UI patterns และ micro-interactions ที่นำไปใช้จริงบน Production</p>
+        </header>
+
+        <div class="skill-card-container">
+            <!-- Skill 1: React State & Custom Hook -->
+            <div class="skill-code-block">
+                <div class="skill-info-top">
+                    <div class="skill-icon-row">
+                        <span class="skill-icon">⚛️</span>
+                        <h2 class="skill-title-text">Custom Hooks &amp; UI Performance</h2>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tag">React</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Hooks</span>
+                    </div>
+                    <p class="skill-desc-text">การสร้าง Custom Hook เพื่อจัดการ Search Debounce และลดการ Re-render ของ Component ขนาดใหญ่</p>
+                </div>
+
+                <div class="code-window-panel">
+                    <div class="window-header">
+                        <div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span
+                                class="dot-green"></span></div>
+                        <span class="file-name-label code-font">hooks/useDebounce.ts</span>
+                    </div>
+                    <pre class="code-view code-font"><code><span class="c-kw">import</span> { useState, useEffect } <span class="c-kw">from</span> <span class="c-str">'react'</span>;
+
+<span class="c-kw">export function</span> <span class="c-fn">useDebounce</span>&lt;<span class="c-type">T</span>&gt;(value: <span class="c-type">T</span>, delay: <span class="c-bool">number</span>): <span class="c-type">T</span> {
+  <span class="c-kw">const</span> [debouncedValue, setDebouncedValue] = useState&lt;<span class="c-type">T</span>&gt;(value);
+
+  useEffect(() =&gt; {
+    <span class="c-kw">const</span> handler = setTimeout(() =&gt; setDebouncedValue(value), delay);
+    <span class="c-kw">return</span> () =&gt; clearTimeout(handler);
+  }, [value, delay]);
+
+  <span class="c-kw">return</span> debouncedValue;
+}</code></pre>
+                    <div class="output-view">
+                        <div class="output-tag code-font">▶ Render Metric</div>
+                        <pre class="output-result code-font">// Search input debounced by 300ms
+Filtered 2,500 list items smoothly | 60 FPS animation retained ✓</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill 2: Interactive Animation & Canvas -->
+            <div class="skill-code-block">
+                <div class="skill-info-top">
+                    <div class="skill-icon-row">
+                        <span class="skill-icon">🎨</span>
+                        <h2 class="skill-title-text">Interactive Canvas &amp; Animations</h2>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tag">HTML5 Canvas</span>
+                        <span class="tag">CSS Grid/Flexbox</span>
+                        <span class="tag">Web Performance</span>
+                        <span class="tag">Responsive UI</span>
+                    </div>
+                    <p class="skill-desc-text">การวาดเอฟเฟกต์แบบไดนามิกผ่าน Hardware-Accelerated Canvas สำหรับสร้าง UI Micro-interactions</p>
+                </div>
+
+                <div class="code-window-panel">
+                    <div class="window-header">
+                        <div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span
+                                class="dot-green"></span></div>
+                        <span class="file-name-label code-font">components/ParticleCanvas.tsx</span>
+                    </div>
+                    <pre class="code-view code-font"><code><span class="c-kw">const</span> animate = () =&gt; {
+  ctx.clearRect(0, 0, width, height);
+  particles.forEach(p =&gt; {
+    p.update();
+    p.draw(ctx);
+  });
+  requestAnimationFrame(animate);
+};</code></pre>
+                    <div class="output-view">
+                        <div class="output-tag code-font">▶ Performance Output</div>
+                        <pre class="output-result code-font">Lighthouse Performance: 99/100
+First Contentful Paint (FCP): 0.6s | Cumulative Layout Shift (CLS): 0.00 ✓</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <span>forget.zoph90@gmail.com &nbsp;·&nbsp; +66 92 650 5729</span>
+        <span>© 2026 Sofron. All rights reserved.</span>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const iconBurger = document.getElementById('icon-burger');
+        const iconClose = document.getElementById('icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                iconBurger.style.display = 'none';
+                iconClose.style.display = 'block';
+            } else {
+                iconBurger.style.display = 'block';
+                iconClose.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

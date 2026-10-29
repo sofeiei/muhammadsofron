@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work & Projects - Sofron</title>
+    <!-- ดึงไฟล์ style.css ในโฟลเดอร์ตัวเอง -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar-sticky">
+        <div class="navbar-content">
+            <a href="../index.html" class="code-font logo-text">
+                <span class="logo-bracket">&lt;</span>Sofron <span class="logo-bracket"> /&gt;</span>
+            </a>
+
+            <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Toggle menu">
+                <svg id="icon-burger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg id="icon-close" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="nav-links code-font">
+                <a href="./index.html" class="nav-link active-page">.work()</a>
+                <a href="../skills/index.html" class="nav-link">.skills()</a>
+                <a href="../about/index.html" class="nav-link">.about()</a>
+                <a href="https://github.com/sofeiei" target="_blank" class="nav-btn-outline">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <header class="page-header">
+            <p class="code-font text-tag">// app/work/page.tsx</p>
+            <h1 class="page-title">Work &amp; <span class="text-primary">Projects</span></h1>
+            <p class="page-desc">โปรเจกต์จริงที่พัฒนาและ deploy ขึ้น production — สร้างขึ้นเพื่อแก้ปัญหาและตอบโจทย์การใช้งานจริง</p>
+        </header>
+
+        <section>
+            <p class="code-font text-tag">// Featured Projects</p>
+
+            <div class="project-list">
+                <article class="project-card">
+                    <div class="project-card-header code-font">
+                        <span class="dot-indicator"></span>
+                        <span class="file-tag">thai-shame-guard.ts</span>
+                        <span class="year-badge">2026</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-category">Full-Stack · AI Security · Real-Time Web App</span>
+                        <h2 class="project-heading">Thai Shame Guard — Real-Time Text Analysis</h2>
+                        <p class="project-summary">แพลตฟอร์มตรวจจับและวิเคราะห์ข้อความเชิงลบ/การคุกคามทางไซเบอร์ภาษาไทยแบบ Real-time โดยประสานการทำงานระหว่าง Next.js และ Python API</p>
+                        <ul class="project-features">
+                            <li><span>▸</span> Next.js frontend ทำงานร่วมกับ Python API ประมวลผลและตรวจจับข้อความภาษาไทย</li>
+                            <li><span>▸</span> Dashboard แสดงผลวิเคราะห์ความเสี่ยงและแจ้งเตือนเชิงโต้ตอบแบบเรียลไทม์</li>
+                        </ul>
+                        <div class="tags-container">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">Vercel</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header code-font">
+                        <span class="dot-indicator"></span>
+                        <span class="file-tag">parallel-benchmark.java</span>
+                        <span class="year-badge">2026</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-category">System Engineering · Parallel Computing</span>
+                        <h2 class="project-heading">High-Performance Parallel Computing Analysis</h2>
+                        <p class="project-summary">ระบบวิเคราะห์และทดสอบประสิทธิภาพการประมวลผลคู่ขนานด้วย Multi-threading, ForkJoinPool และ Parallel Streams บนสถาปัตยกรรม Apple Silicon</p>
+                        <ul class="project-features">
+                            <li><span>▸</span> การวัดผล Speedup และประสิทธิภาพตามทฤษฎี Amdahl's Law</li>
+                            <li><span>▸</span> พัฒนา Multi-threaded Array Summation รองรับข้อมูลขนาดใหญ่แบบเต็มขีดจำกัดซีพียู</li>
+                        </ul>
+                        <div class="tags-container">
+                            <span class="tag">Java</span>
+                            <span class="tag">ForkJoinPool</span>
+                            <span class="tag">Concurrency</span>
+                            <span class="tag">Maven</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <span>forget.zoph90@gmail.com &nbsp;·&nbsp; +66 92 650 5729</span>
+        <span>© 2026 Sofron. All rights reserved.</span>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const iconBurger = document.getElementById('icon-burger');
+        const iconClose = document.getElementById('icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                iconBurger.style.display = 'none';
+                iconClose.style.display = 'block';
+            } else {
+                iconBurger.style.display = 'block';
+                iconClose.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

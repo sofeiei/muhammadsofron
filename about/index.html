@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Sofron</title>
+    <!-- ดึงไฟล์ style.css ในโฟลเดอร์ตัวเอง -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar-sticky">
+        <div class="navbar-content">
+            <a href="../index.html" class="code-font logo-text">
+                <span class="logo-bracket">&lt;</span>Sofron <span class="logo-bracket"> /&gt;</span>
+            </a>
+
+            <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Toggle menu">
+                <svg id="icon-burger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg id="icon-close" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="nav-links code-font">
+                <a href="../work/index.html" class="nav-link">.work()</a>
+                <a href="../skills/index.html" class="nav-link">.skills()</a>
+                <a href="../about/index.html" class="nav-link active-page">.about()</a>
+                <a href="https://github.com/sofeiei" target="_blank" class="nav-btn-outline">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <header class="page-header">
+            <p class="code-font text-tag">// app/about/page.tsx</p>
+            <h1 class="page-title">About <span class="text-primary">Me</span></h1>
+            <p class="page-desc">Frontend Developer ผู้มุ่งมั่นพัฒนาเว็บแอปพลิเคชันที่มี UI/UX ราบรื่นและมีประสิทธิภาพสูง</p>
+        </header>
+
+        <div class="about-grid">
+            <div>
+                <!-- กล่องที่ 1: Personal Statement -->
+                <div class="about-section-box">
+                    <p class="code-font text-tag">// Personal Statement</p>
+                    <div class="statement-box">
+                        <p>มูฮัมหมัดซอฟรอน ยะมา นักศึกษาชั้นปีที่ 3 สาขา AI &amp; System Engineering (AISE) มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต</p>
+                        <p>เชี่ยวชาญการพัฒนา Frontend ด้วย React, Next.js และ TypeScript เน้น Clean Component Architecture, Mobile-First Responsive Design และ Micro-Interactions ที่ลื่นไหล</p>
+                        <p>พร้อมเรียนรู้เทคโนโลยีใหม่ ทำงานร่วมกับทีมได้อย่างมีประสิทธิภาพ และส่งมอบซอฟต์แวร์ที่ตอบโจทย์ผู้ใช้จริง</p>
+                    </div>
+                </div>
+
+                <!-- กล่องที่ 2: Education -->
+                <div class="about-section-box">
+                    <p class="code-font text-tag">// Education</p>
+                    <div class="code-window-panel">
+                        <div class="window-header">
+                            <div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+                            <span class="file-name-label code-font">education.ts</span>
+                        </div>
+                        <pre class="code-view code-font"><code><span class="c-kw">const</span> education = [
+  {
+    degree: <span class="c-str">"B.Eng. — AI & System Eng."</span>,
+    school: <span class="c-str">"PSU Phuket"</span>,
+    period: <span class="c-str">"2024 – 2027 (Expected)"</span>,
+    keyCourses: [
+      <span class="c-str">"Web Technologies & Frontend"</span>,
+      <span class="c-str">"Software Architecture & Design"</span>,
+      <span class="c-str">"HCI & UI/UX Principles"</span>
+    ],
+    year: <span class="c-bool">3</span>
+  }
+];</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <!-- กล่องที่ 3: Profile -->
+                <div class="about-section-box">
+                    <p class="code-font text-tag">// Profile</p>
+                    <div class="code-window-panel">
+                        <div class="window-header">
+                            <div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+                            <span class="file-name-label code-font">sofron.ts</span>
+                        </div>
+                        <pre class="code-view code-font"><code><span class="c-kw">const</span> me = {
+  name: <span class="c-str">"MUHAMMADSOFRON YAMA"</span>,
+  nickname: <span class="c-str">"Sofron"</span>,
+  role: <span class="c-str">"Frontend Developer"</span>,
+  location: <span class="c-str">"Phuket, Thailand 🇹🇭"</span>,
+  languages: {
+    thai: <span class="c-str">"Native"</span>,
+    malay: <span class="c-str">"Fluent"</span>,
+    english: <span class="c-str">"Intermediate"</span>
+  },
+  status: <span class="c-str">"Open to Frontend roles ✓"</span>
+};</code></pre>
+                    </div>
+                </div>
+
+                <!-- กล่องที่ 4: Key Competencies -->
+                <div class="about-section-box">
+                    <p class="code-font text-tag">// Key Competencies</p>
+                    <div class="competency-box">
+                        <div class="comp-row"><span class="comp-check">✓</span> <div><strong>Modern Frontend</strong> — React, Next.js, TypeScript &amp; Component Design</div></div>
+                        <div class="comp-row"><span class="comp-check">✓</span> <div><strong>Responsive UI</strong> — Tailwind CSS, Modern CSS (Grid/Flexbox)</div></div>
+                        <div class="comp-row"><span class="comp-check">✓</span> <div><strong>Motion &amp; Canvas</strong> — HTML5 Canvas, Web Animations &amp; Shaders</div></div>
+                        <div class="comp-row"><span class="comp-check">✓</span> <div><strong>Collaboration</strong> — Git Workflow, Core Web Vitals &amp; Team Leadership</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <span>forget.zoph90@gmail.com &nbsp;·&nbsp; +66 92 650 5729</span>
+        <span>© 2026 Sofron. All rights reserved.</span>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const iconBurger = document.getElementById('icon-burger');
+        const iconClose = document.getElementById('icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                iconBurger.style.display = 'none';
+                iconClose.style.display = 'block';
+            } else {
+                iconBurger.style.display = 'block';
+                iconClose.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

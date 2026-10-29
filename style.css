@@ -1,0 +1,505 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0b0f14;
+    /* โทนดำอมน้ำเงินเข้ม */
+    color: #f4f4f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+::selection {
+    background-color: #3b82f6;
+    color: #030712;
+}
+
+.code-font {
+    /* ใช้ฟอนต์แนวโค้ด (Monospace) ที่มีติดเครื่องอยู่แล้ว */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ========================================== */
+/* // Background Glow Effect (แก้ไม่ให้ดันจอมือถือ) */
+/* ========================================== */
+.bg-glow-1 {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    max-width: 80vw;
+    width: 350px;
+    height: 350px;
+    background-color: rgba(37, 99, 235, 0.08);
+    filter: blur(100px);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.bg-glow-2 {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    max-width: 80vw;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(79, 70, 229, 0.08);
+    filter: blur(100px);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+@media (min-width: 768px) {
+    .bg-glow-1 {
+        left: 20%;
+        width: 500px;
+        height: 500px;
+        filter: blur(140px);
+    }
+
+    .bg-glow-2 {
+        right: 20%;
+        width: 400px;
+        height: 400px;
+        filter: blur(140px);
+    }
+}
+
+/* ========================================== */
+/* // Navbar & Sticky Menu (อัปเดตตามแบบ) */
+/* ========================================== */
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(11, 15, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1f2937;
+}
+
+.navbar-content {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #c084fc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-bracket {
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.text-primary {
+    color: #3b82f6;
+}
+
+/* ปุ่ม 3 ขีดบนมือถือ */
+.hamburger-btn {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+.hamburger-btn:hover {
+    color: #f3f4f6;
+}
+
+/* สไตล์เมนู (รองรับทั้งมือถือและคอม) */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0b0f14;
+    border-bottom: 1px solid #1f2937;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+.nav-links.active {
+    display: flex;
+    animation: slideDown 1.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-content {
+        padding: 1.25rem 2.5rem;
+    }
+
+    .hamburger-btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+.nav-link {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #f3f4f6;
+}
+
+/* ไฮไลต์สีฟ้าสำหรับเมนูหน้าที่เปิดอยู่ (.skills()) */
+.nav-link.active-page {
+    color: #60a5fa;
+}
+
+.nav-btn-outline {
+    display: inline-block;
+    width: fit-content;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid #374151;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.nav-btn-outline:hover {
+    color: #f3f4f6;
+    border-color: #4b5563;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================== */
+/* // Main Content & Hero Section */
+/* ========================================== */
+.main-container {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    /* ขอบซ้าย-ขวาบนมือถือ */
+    flex-grow: 1;
+    position: relative;
+    z-index: 10;
+}
+
+/* บนมือถือ: จัดเรียงแนวตั้งและให้รูปอยู่ด้านบนตรงกลาง */
+.hero-section {
+    padding: 1rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        padding: 2.5rem;
+    }
+
+    /* บนคอม: สลับให้รูปอยู่ขวา และข้อความอยู่ซ้ายชิดข้าง */
+    .hero-section {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0;
+        gap: 4rem;
+    }
+}
+
+.hero-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.text-hello {
+    color: #fbbf24;
+    font-size: 0.85rem;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.hero-desc {
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        max-width: 42rem;
+    }
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #374151;
+    color: #d4d4d8;
+}
+
+.btn-primary:hover {
+    border-color: #4b5563;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #374151;
+    color: #d4d4d8;
+}
+
+.btn-secondary:hover {
+    border-color: #4b5563;
+}
+
+/* ========================================== */
+/* // Profile Image (รูปโปรไฟล์ตรงกลางบนมือถือ) */
+/* ========================================== */
+.profile-card {
+    width: 100%;
+    max-width: 200px;      /* ขนาดตรงกลางตามแบบในคลิป */
+    aspect-ratio: 3 / 4;   /* สัดส่วนแนวตั้ง */
+    border-radius: 1.25rem;
+    background-color: #111827;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .profile-card {
+        max-width: 280px;
+        height: auto;
+    }
+}
+
+.profile-image,
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ========================================== */
+/* // Stats Bar */
+/* ========================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+}
+
+.stat-box {
+    text-align: left;
+}
+
+/* ให้สถิติชิดซ้ายบนมือถือ */
+@media (min-width: 768px) {
+    .stat-box {
+        padding: 1.5rem;
+        background-color: rgba(3, 7, 18, 0.6);
+        border-radius: 0.75rem;
+        border: 1px solid #111827;
+        text-align: center;
+    }
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .stat-number {
+        font-size: 2.25rem;
+    }
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
+/* ========================================== */
+/* // Skills Section */
+/* ========================================== */
+.skills-section {
+    padding: 2rem 0 3rem 0;
+}
+
+.text-section-tag {
+    color: #71717a;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+}
+
+.skill-card {
+    padding: 1.5rem;
+    background-color: rgba(24, 24, 27, 0.4);
+    border: 1px solid rgba(39, 39, 42, 0.8);
+    border-radius: 1rem;
+    transition: border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skill-card:hover {
+    border-color: #3f3f46;
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+}
+
+.skill-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.skill-desc {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* ========================================== */
+/* // Footer */
+/* ========================================== */
+.footer-container {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid #1f2937;
+    font-size: 0.75rem;
+    color: #71717a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        padding: 2.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.8rem;
+    }
+}
